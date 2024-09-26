@@ -105,7 +105,7 @@ func (psqlc *psqlConnection) createConnectionParameters(user, password string) m
 func main() {
 	restClientConfig := config.GetConfigOrDie()
 	interfaceClient := kubernetes.NewForConfigOrDie(restClientConfig)
-	namespace := "default"
+	namespace := "postgresql-reset-poc"
 	clusterName := "cluster-example"
 
 	clusterSecret, err := interfaceClient.CoreV1().Secrets(namespace).Get(context.Background(), clusterName+"-app", v2.GetOptions{})
